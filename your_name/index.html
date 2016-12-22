@@ -1,0 +1,73 @@
+<!--
+  I would like to thank Mark de Jong for her workshop 'Snowfall' for Wallpaper Engine on Steam.
+  She provided me with the usage of falling snow, which was originally created by Josh McCarty.
+  I simply change the background and some parameters.
+-->
+
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Your Name with Snowfall</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+
+      body{
+        background-image: url("your_name.jpg");
+      }
+      main {
+        margin: 0 auto;
+        max-width: 100%;
+      }
+
+    </style>
+    <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="jquery.flurry.js"></script>
+    <script>
+      $( document ).ready( function() {
+
+        $('body').flurry({
+          character: "❄",
+          color: "white",
+          height: 1080,
+          frequency: 200,
+          speed: 20000,
+          small: 6,
+          large: 24,
+          wind: 0,
+          windVariance: 100,
+          rotation: 90,
+          rotationVariance: 180
+        });
+
+        $('.toggle-snow').on('click', function(event) {
+
+          event.preventDefault();
+
+          try {
+            $('body').flurry('destroy');
+          }
+          catch(err) {
+            $('body').flurry();
+          }
+        });
+      });
+    </script>
+  </head>
+
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36251023-1']);
+  _gaq.push(['_setDomainName', 'jqueryscript.net']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</html>
