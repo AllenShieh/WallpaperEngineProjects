@@ -14,6 +14,7 @@
 
       body{
         background-image: url("your_name.jpg");
+        background-size: cover;
       }
       main {
         margin: 0 auto;
@@ -25,11 +26,11 @@
     <script src="jquery.flurry.js"></script>
     <script>
       $( document ).ready( function() {
-
+        var desktop_height = $(document).height();
         $('body').flurry({
           character: "❄",
           color: "white",
-          height: 1080,
+          height: desktop_height,
           frequency: 200,
           speed: 20000,
           small: 6,
